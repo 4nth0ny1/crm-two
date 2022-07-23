@@ -1,0 +1,24 @@
+<div class="head-container">
+  <h1>Accounts</h1>
+  <%= link_to 'Back to Home', root_path %>
+  <%= link_to 'Create Account', new_account_path, class:"btn btn-primary" %>
+</div>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Company Name</th>
+      <th>Phone Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= link_to account.name, account %></td>
+        <td><%= account.phone %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

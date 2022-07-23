@@ -1,0 +1,30 @@
+  <%= form_with(model: contact) do |form| %>
+      <%= form.hidden_field :account_id, value: contact.account_id %>
+    
+        <div class="field mb-3">
+            <%= form.label :name, class: "form-label"  %>
+            <%= form.text_field :name, class:"form-control" %>
+        </div>
+
+        <div class="field mb-3">
+            <%= form.label :phone, class: "form-label"  %></label>
+            <%= form.text_field :phone, class:"form-control"  %>
+        </div>
+
+        <div class="field mb-3">
+            <%= form.label :email, class: "form-label"  %>
+            <%= form.text_field :email, class:"form-control"  %>
+        </div>
+
+        <div class="field mb-3">
+            <%= form.label :role, class: "form-label" %>
+            <%= form.text_field :role, class:"form-control" %>
+        </div>
+
+        <div class="actions">
+            <%= form.submit %>
+        </div>
+
+  <% end %>
+    
+

@@ -1,0 +1,22 @@
+<table class="table">
+    <thead>
+       
+            <tr>
+                <th>Date Created </th>
+                <th>Company Name </th>
+                <th>Contact</th>
+               
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <% accounts.each do |account| %>
+                    <td><%= link_to account.name, accounts_path %></td>
+                    <% account.contacts.each do |contact| %>
+                        <td><%= contact.name%></td>
+                    <% end %>
+            </tr>
+                <% end %>
+        </tbody>
+</table>

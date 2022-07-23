@@ -1,0 +1,46 @@
+<div class="show-container">
+    <div class="account-show-company">
+        <h2><strong><%= @account.name %></strong></h2>
+
+
+        <p><strong>Phone: </strong><%= @account.phone %></p>
+        <%= link_to 'Back to Accounts', accounts_path, class:"btn btn-info" %> 
+        <%= button_to 'Destroy', @account, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+
+    
+        <div class="connections-show">
+            <table class="table">
+                <thead>
+                    <h3>Contacts</h3>
+                        <tr>
+                            <th>Name: </th>
+                            
+                            <th>Role: </th>
+                            <th>Phone: </th>
+                            <th>Email: </th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <% @account.contacts.each do |contact| %>
+                                <td><%= contact.name %></td>
+                                
+                                <td><%= contact.role %></td>
+                                <td><%= contact.phone %></td>
+                                <td><%= contact.email %></td>
+                                <td><%= link_to "Show", contact %></td>
+
+                        </tr>
+                            <% end %>
+                        
+                    </tbody>
+            </table>
+            <%= link_to 'Add Contact', new_account_contact_path(@account) %> 
+            <%= link_to 'View all Contacts', account_contacts_path(@account) %> 
+
+        </div>
+
+  
+</div>

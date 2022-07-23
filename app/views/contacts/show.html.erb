@@ -3,3 +3,4 @@
 <%= @contact.phone %>
 <%= @contact.email %>
 <%= link_to "back to account", @contact.account %>
+<%= button_to "delete contact", @account_path, method: :delete, data: { confirm: "Are you sure?"}  %>

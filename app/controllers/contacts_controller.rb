@@ -5,8 +5,6 @@ class ContactsController < ApplicationController
         if params[:account_id]
             account = Account.find(params[:account_id])
             @contacts = account.contacts.where(account: account)
-        else 
-            @contacts = account.contacts
         end 
     end 
 
@@ -29,7 +27,7 @@ class ContactsController < ApplicationController
 
     def destroy 
         @contact.destroy 
-        redirect_to @contacts_url, notice: "Contact was successfully destroyed!"
+        redirect_to accounts_url, notice: "Contact was successfully destroyed!"
     end 
 
     private 
